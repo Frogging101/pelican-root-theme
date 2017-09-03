@@ -1,0 +1,40 @@
+body {
+	background-color: #000000;
+	color: #EEEEEE;
+	font-family: "DejaVu Sans Mono", "Consolas", monospace;
+}
+
+#logo {
+	font-family: "DejaVu Sans Mono", "Consolas", monospace;
+	text-align: center;
+}
+
+#logo .f {
+	color: #0081ff;
+}
+
+#logo .q {
+	color: orange;
+}
+
+#title {
+	text-align: center;
+}
+
+.fstree {
+	font-family: "DejaVu Sans Mono", "Consolas", monospace;
+	display: inline-block;
+	text-align: initial;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: fuchsia;
+}
+
+a:link {
+	color: aqua;
+}
