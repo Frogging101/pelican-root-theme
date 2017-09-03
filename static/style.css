@@ -17,10 +17,6 @@ body {
 	color: orange;
 }
 
-#title {
-	text-align: center;
-}
-
 .fstree {
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
 	display: inline-block;
