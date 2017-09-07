@@ -4,6 +4,59 @@
 	{% block head %}
 	<title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
 	<meta charset="utf-8" />
+	<!--
+		Have to do this Javascript horseshit because:
+			- "width=[constant], initial-scale=1.0" still makes the
+			  page load zoomed in to the device viewport.
+			- Without initial-scale=1.0, it loads with everything
+			  visible but the viewport will not expand if the
+			  device viewport is wider, leading to awful scaling.
+			- width=device-width can cause the page to be
+			  permanently zoomed in, disregarding content wider
+			  than the zoom allows.
+			- Finally, if we try to escape the <meta name="viewport">
+			  idiocy by just leaving it out, then mobile Chrome will
+			  "boost" the font size and make everything look like
+			  shit while flagging the page as "not mobile-friendly".
+
+		So we need to use Javascript to give the viewport a set width
+		while still scaling to larger device widths, without the
+		browser doing zoom nonsense. As a fallback, we'll do the first
+		thing I mentioned with initial-scale=1.0 and live with the zoom.
+	-->
+	<noscript>
+		<meta name="viewport" content="width=616, initial-scale=1.0">
+	</noscript>
+	<script>
+		function vp() {
+			var MIN_WIDTH = 616;
+
+			var viewport = document.querySelector("meta[name=viewport]");
+
+			if (viewport)
+				document.head.removeChild(viewport);
+
+			viewport = document.createElement("meta");
+			var content = "width=";
+
+			viewport.setAttribute("name", "viewport");
+
+			if (screen.width > MIN_WIDTH)
+				content += screen.width;
+			else
+				content += MIN_WIDTH;
+
+			viewport.setAttribute("content", content);
+			document.head.appendChild(viewport);
+		}
+
+		vp();
+		window.addEventListener('load', vp, false);
+		window.addEventListener('resize', vp, false);
+		window.addEventListener('orientationchange', vp, false);
+		window.addEventListener('deviceorientation', vp, false);
+		window.addEventListener('MozOrientation', vp, false);
+	</script>
 	<link rel="stylesheet" href="{{ SITEURL }}/theme/style.css">
 {#
 	{% if FEED_ALL_ATOM %}
