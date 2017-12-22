@@ -1,12 +1,25 @@
+html {
+	min-width: 600px;
+}
+
 body {
 	background-color: #000000;
-	color: #EEEEEE;
+	color: #FFFFFF;
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
+	min-width: 600px;
+}
+
+#header {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
 }
 
 #logo {
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
-	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+	white-space: nowrap;
 }
 
 #logo .f {
@@ -17,10 +30,78 @@ body {
 	color: orange;
 }
 
+#main {
+	display: block;
+	margin: 0 auto;
+	max-width: 1366px;
+	text-align: initial;
+}
+
+.heading {
+	display: block;
+	padding: 2px;
+	padding-left: 4px;
+	font-size: 2em;
+	font-weight: bold;
+	background-color: #309d2d;
+}
+
+#box-outer {
+	display: flex;
+	flex-direction: column;
+}
+
+#box-up {
+	display: flex;
+}
+
+#box-left {
+	flex-shrink: 0;
+	min-width: 24px;
+	margin-right: 24px;
+	border-right: 2px ridge orange;
+}
+
+#box-left #ext {
+	width: 100%;
+	padding-top: 100%;
+	border-right: 2px ridge orange;
+}
+
+#box-down {
+	flex-basis: 0;
+	width: 100%;
+	border-top: 2px ridge #a200a0;
+	text-align: right;
+}
+
+#sidetext {
+	height: 100%;
+	display: flex;
+}
+
+#sidetext span {
+	display: inline-block;
+	align-self: flex-end;
+	writing-mode: vertical-lr;
+	width: 1em;
+	font-size: 2.5em;
+	transform: rotate(180deg);
+	color: orange;
+	font-family: "Times New Roman", Times, serif;
+	padding-top: 8px;
+}
+
+#bodytext {
+	display: block;
+	font-size: 1.1em;
+}
+
 .fstree {
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
 	display: inline-block;
 	text-align: initial;
+	font-size: 1.3em;
 }
 
 a {

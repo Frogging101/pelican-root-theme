@@ -87,10 +87,10 @@
 	{% endblock head %}
 </head>
 
-<body id="index" class="home">
+<body>
 {#
 	<header id="banner" class="body">
-	        <h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+		<h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
 	</header><!-- /#banner -->
 	<nav id="menu"><ul>
 	{% for title, link in MENUITEMS %}
@@ -109,23 +109,26 @@
 	{% endif %}
 	</ul></nav><!-- /#menu -->
 #}
-	<div id="logo">                                  	<span class="q">  ____              _        </span><br>
-		<span class="f">     ______           __ </span><span class="q"> / __ \            | |       </span><br>
-		<span class="f">   ~/ ____/___ ______/ /_</span><span class="q">| |  | |_   _  __ _| | _____ </span><br>
-		<span class="f">  ~/ /_  / __ `/ ___/ __/</span><span class="q">| |  | | | | |/ _` | |/ / _ \</span><br>
-		<span class="f"> ~/ __/ / /_/ (__  ) /_  </span><span class="q">| |__| | |_| | (_| |   &lt;  __/</span><br>
-		<span class="f">~/_/    \__,_/____/\__/  </span><span class="q"> \___\_\\__,_|\__,_|_|\_\___|</span><br>
-	</div>
-	<br>
+	<div id="header">
+		<a href="{{ SITEURL }}/"><div id="logo">
+                                                <span class="q">  ____              _        </span><br>
+<span class="f">     ______           __ </span><span class="q"> / __ \            | |       </span><br>
+<span class="f">   ~/ ____/___ ______/ /_</span><span class="q">| |  | |_   _  __ _| | _____ </span><br>
+<span class="f">  ~/ /_  / __ `/ ___/ __/</span><span class="q">| |  | | | | |/ _` | |/ / _ \</span><br>
+<span class="f"> ~/ __/ / /_/ (__  ) /_  </span><span class="q">| |__| | |_| | (_| |   &lt;  __/</span><br>
+<span class="f">~/_/    \__,_/____/\__/  </span><span class="q"> \___\_\\__,_|\__,_|_|\_\___|</span><br>
+		</div></a><br>
+		<br>
 	{% if node.parent %}
-		<div style="text-align: center">
-			<div class="fstree">
+		<div class="fstree">
 {{ node.render_tree_ancestors(-1) }}
-			</div>
-	</div>
+		</div>
 	{% endif %}
-	{% block content %}
-	{% endblock %}
+	</div>
+	<div id="main">
+		{% block content %}
+		{% endblock %}
+	</div>
 {#
 	<footer id="contentinfo" class="body">
 		<address id="about" class="vcard body">
