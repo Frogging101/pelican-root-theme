@@ -7,17 +7,21 @@
 	<div id="box-outer">
 		<div id="box-up">
 			<div id="box-left">
-				<div id="sidetext"><span>{{page.title}}</span></div>
-				<div id="ext"></div>
+				<div class="sidetext-wrapper">
+					<span class="sidetext-font sidetext-layout">{{page.title}}</span>
+				</div>
 			</div>
 			<div id="bodytext">
 				{{ page.content }}
 			</div>
 		</div>
 		<div id="box-down">
-			{% if page.modified %}
-				Last updated: {{ page.locale_modified }}
-			{% endif %}
+			<div id="ext"><div class="square"><span class="sidetext-font"></span></div></div>
+			<div id="infoline">
+				{% if page.modified %}
+					Last updated: {{ page.locale_modified }}
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

@@ -62,34 +62,46 @@ body {
 	border-right: 2px ridge orange;
 }
 
-#box-left #ext {
-	width: 100%;
-	padding-top: 100%;
+#box-down #ext {
 	border-right: 2px ridge orange;
 }
 
 #box-down {
-	flex-basis: 0;
+	display: flex;
 	width: 100%;
 	border-top: 2px ridge #a200a0;
+}
+
+#box-down #infoline {
+	flex: 1;
 	text-align: right;
 }
 
-#sidetext {
+.sidetext-wrapper {
 	height: 100%;
 	display: flex;
 }
 
-#sidetext span {
-	display: inline-block;
-	align-self: flex-end;
+.sidetext-font {
+	font-size: 2.5em;
+	font-family: "Times New Roman", Times, serif;
 	writing-mode: vertical-lr;
 	width: 1em;
-	font-size: 2.5em;
-	transform: rotate(180deg);
 	color: orange;
-	font-family: "Times New Roman", Times, serif;
+}
+
+.sidetext-layout {
+	display: inline-block;
+	align-self: flex-end;
+	transform: rotate(180deg);
 	padding-top: 8px;
+}
+
+.square {
+	width: 100%;
+	height: 0;
+	padding-top: 100%;
+	overflow: hidden;
 }
 
 #bodytext {
