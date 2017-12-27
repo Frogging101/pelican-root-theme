@@ -119,9 +119,9 @@
 <span class="f">~/_/    \__,_/____/\__/  </span><span class="q"> \___\_\\__,_|\__,_|_|\_\___|</span><br>
 		</div></a><br>
 		<br>
-	{% if node.parent %}
+	{% if Base_Display_Tree|default(true) %}
 		<div class="fstree">
-{{ node.render_tree_ancestors(-1) }}
+{{ node.render_tree_ancestors(descendants=Base_Tree_Descendants|default(-1)) }}
 		</div>
 	{% endif %}
 	</div>
