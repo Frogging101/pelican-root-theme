@@ -46,33 +46,33 @@ body {
 	background-color: #309d2d;
 }
 
-#box-outer {
+.box-outer {
 	display: flex;
 	flex-direction: column;
 }
 
-#box-up {
+.box-up {
 	display: flex;
 }
 
-#box-left {
+.box-left {
 	flex-shrink: 0;
 	min-width: 24px;
 	margin-right: 24px;
 	border-right: 2px ridge orange;
 }
 
-#box-down #ext {
+.box-down .ext {
 	border-right: 2px ridge orange;
 }
 
-#box-down {
+.box-down {
 	display: flex;
 	width: 100%;
 	border-top: 2px ridge #a200a0;
 }
 
-#box-down #infoline {
+.box-down .infoline {
 	flex: 1;
 	text-align: right;
 }

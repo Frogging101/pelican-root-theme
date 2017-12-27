@@ -4,9 +4,9 @@
 	<h1 class="heading">{{ page.title }}</h1>
 	{% import 'translations.html' as translations with context %}
 	{{ translations.translations_for(page) }}
-	<div id="box-outer">
-		<div id="box-up">
-			<div id="box-left">
+	<div class="box-outer">
+		<div class="box-up">
+			<div class="box-left">
 				<div class="sidetext-wrapper">
 					<span class="sidetext-font sidetext-layout">{{page.title}}</span>
 				</div>
@@ -15,9 +15,9 @@
 				{{ page.content }}
 			</div>
 		</div>
-		<div id="box-down">
-			<div id="ext"><div class="square"><span class="sidetext-font"></span></div></div>
-			<div id="infoline">
+		<div class="box-down">
+			<div class="ext"><div class="square"><span class="sidetext-font"></span></div></div>
+			<div class="infoline">
 				{% if page.modified %}
 					Last updated: {{ page.locale_modified }}
 				{% endif %}
