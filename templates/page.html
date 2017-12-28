@@ -1,27 +1,18 @@
 {% extends "base.html" %}
+{% from "box.html" import box %}
+{% block head_end %}
+	<style type="text/css">
+	 #page-box .box-content {
+	     font-size: 1.1em;
+	 }
+	</style>
+{% endblock %}
 {% block title %}{{ page.title }}{%endblock%}
 {% block content %}
-	<h1 class="heading">{{ page.title }}</h1>
 	{% import 'translations.html' as translations with context %}
 	{{ translations.translations_for(page) }}
-	<div class="box-outer">
-		<div class="box-up">
-			<div class="box-left">
-				<div class="sidetext-wrapper">
-					<span class="sidetext-font sidetext-layout">{{page.title}}</span>
-				</div>
-			</div>
-			<div id="bodytext">
-				{{ page.content }}
-			</div>
-		</div>
-		<div class="box-down">
-			<div class="ext"><div class="square"><span class="sidetext-font"></span></div></div>
-			<div class="infoline">
-				{% if page.modified %}
-					Last updated: {{ page.locale_modified }}
-				{% endif %}
-			</div>
-		</div>
-	</div>
+	{% if page.modified %}
+		{% set infoline = "Last modified: "+page.locale_modified %}
+	{% endif %}
+	{{ box(page.title, page.content, infoline, "page-box") }}
 {% endblock %}

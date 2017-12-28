@@ -104,11 +104,6 @@ body {
 	overflow: hidden;
 }
 
-#bodytext {
-	display: block;
-	font-size: 1.1em;
-}
-
 .fstree {
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
 	display: inline-block;

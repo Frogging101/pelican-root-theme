@@ -1,0 +1,21 @@
+{% macro box(title, content, infoline, box_id="") -%}
+	<div class="box-outer" id="{{ box_id }}">
+		<h1 class="heading">{{ title }}</h1>
+		<div class="box-up">
+			<div class="box-left">
+				<div class="sidetext-wrapper">
+					<span class="sidetext-font sidetext-layout">{{ title }}</span>
+				</div>
+			</div>
+			<div class="box-content">
+				{{ content }}
+			</div>
+		</div>
+		<div class="box-down">
+			<div class="ext"><div class="square"><span class="sidetext-font"></span></div></div>
+			<div class="infoline">
+				{{ infoline }}
+			</div>
+		</div>
+	</div>
+{%- endmacro %}
