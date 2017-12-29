@@ -80,6 +80,7 @@ body {
 .sidetext-wrapper {
 	height: 100%;
 	display: flex;
+	flex-flow: column nowrap;
 }
 
 .sidetext-font {
@@ -92,7 +93,7 @@ body {
 
 .sidetext-layout {
 	display: inline-block;
-	align-self: flex-end;
+	flex: 0 auto;
 	transform: rotate(180deg);
 	padding-top: 8px;
 }
