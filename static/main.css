@@ -63,6 +63,7 @@ body {
 }
 
 .box-down .ext {
+	display: inline-block;
 	border-right: 2px ridge orange;
 }
 
