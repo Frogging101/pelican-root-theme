@@ -109,6 +109,7 @@ body {
 .fstree {
 	font-family: "DejaVu Sans Mono", "Consolas", monospace;
 	display: inline-block;
+	text-align: left; /* fallback for initial (!CSS3, IE11-) */
 	text-align: initial;
 	font-size: 1.3em;
 }
