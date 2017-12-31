@@ -114,6 +114,35 @@ body {
 	font-size: 1.3em;
 }
 
+.fsnode {
+	display: flex;
+	white-space: nowrap;
+}
+
+.fsnode .fsnode-indent {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.fsnode .fsnode-node {
+	display: inline-block;
+	position: relative;
+	height: 100%;
+}
+
+.fsnode .fsnode-node.fsnode-vert:before {
+	content: "";
+	display: block;
+	height: 100%;
+	border-left: 1px solid white;
+	position: absolute;
+	left: 50%;
+}
+
+.fsnode a {
+	white-space: normal;
+}
+
 a {
 	text-decoration: none;
 }
