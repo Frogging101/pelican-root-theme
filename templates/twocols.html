@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "box.html" import box %}
+{% block content %}
+	<h1 class="heading">{% block title %}{% endblock %}</h1>
+	<div style="display: flex">
+		{% set _box1content %}
+		{% block twoCols_box1Content %}{% endblock %}
+		{% endset %}
+		{% set _box2content %}
+		{% block twoCols_box2Content %}{% endblock %}
+		{% endset %}
+		{{ box(TwoCols_Box1_Title, _box1content, box_id="blog-box1") }}
+		{{ box(TwoCols_Box2_Title, _box2content, box_id="blog-box2") }}
+	</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+#blog-box1 .heading,#blog-box2 .heading {
+	font-size: 1.5em;
+	font-weight: initial;
+	background-color: #3d5377;
+}
+
+#blog-box2 .heading {
+	text-align: right;
+}
+
+#blog-box1 .sidetext-font,#blog-box2 .sidetext-font {
+	font-size: 2.1em;
+}
+
+#blog-box1 {
+	flex: 0.3;
+}
+
+#blog-box2 {
+	flex: 1;
+	padding-left: 16px;
+}

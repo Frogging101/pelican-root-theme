@@ -1,0 +1,13 @@
+{% extends "twocols.html" %}
+{% block head_end %}
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/blog.css">
+{% endblock %}
+{% set TwoCols_Box1_Title = "Navi" %}
+{% set TwoCols_Box2_Title = Blog_Main_Title %}
+{% block twoCols_box1Content %}
+	{{ node.render_tree() }}
+{% endblock %}
+{% block twoCols_box2Content %}
+	{% block blog_mainContent %}
+	{% endblock %}
+{% endblock %}
