@@ -152,6 +152,11 @@ a {
 	text-decoration: none;
 }
 
+a.extlink {
+	background: url(extlink.png) center right / 12px 12px no-repeat;
+	padding-right: 16px;
+}
+
 a:visited {
 	color: fuchsia;
 }
