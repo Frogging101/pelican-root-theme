@@ -157,6 +157,12 @@ a.extlink {
 	padding-right: 16px;
 }
 
+a.intlink:after {
+	content: "\2192";
+	color: lightgrey;
+	padding-left: 2px;
+}
+
 a:visited {
 	color: fuchsia;
 }
